@@ -11,10 +11,10 @@ const Client = db.define('client', {
   balance: {
     type: Sequelize.STRING,
   },
-  creditScore: {
+  credit: {
     type: Sequelize.INTEGER,
   },
-  pictureURL: {
+  picture: {
     type: Sequelize.STRING,
   },
   name_first: {
@@ -30,7 +30,7 @@ const Client = db.define('client', {
     type: Sequelize.STRING,
   },
   phone: {
-    type: Sequelize.INTEGER,
+    type: Sequelize.STRING,
   },
   address: {
     type: Sequelize.STRING,
