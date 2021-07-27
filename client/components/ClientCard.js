@@ -8,26 +8,30 @@ function ClientCard(props) {
   let phonePrefix = phone.substr(3, 3);
   let phoneLine = phone.substr(6);
   return (
-    <Link className="card" to={`/clients/${id}`}>
+    <div className="card">
       <div>
         <div className="container">
-          <h4>
-            <b>
-              {name_first} {name_last}
-            </b>
-          </h4>
+          <Link to={`/clients/${id}`}>
+            <h4>
+              <b>
+                {name_first} {name_last}
+              </b>
+            </h4>
+          </Link>
           <ul className="cardList">
             <li>Balance: ${balance}</li>
             <li>Credit Score: {credit}</li>
             <li>
               ({phoneAreaCode}) {phonePrefix}-{phoneLine}
             </li>
-            <li>{email}</li>
+            <li>
+              <a href={`mailto: ${email}`}>{email}</a>
+            </li>
           </ul>
         </div>
-        {/* <img src={picture} style={{ width: '100%' }} /> */}
       </div>
-    </Link>
+      {/* <img src={picture} style={{ width: '100%' }} /> */}
+    </div>
   );
 }
 
