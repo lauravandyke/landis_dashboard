@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchClient } from '../store/client';
+import { removeClient } from '../store/clients';
 import { formatPhone, formatAddress } from './helperFormatters';
 
 class SingleClient extends React.Component {
@@ -46,6 +47,14 @@ class SingleClient extends React.Component {
               <h3 className="no-top">{addressLines[1]}</h3>
             </div>
           </div>
+          <div className="client-buttons">
+            <button
+              type="button"
+              onClick={() => this.props.deleteClient(client.id)}
+            >
+              Delete Record
+            </button>
+          </div>
         </div>
         <div className="client-detail">
           <h2>
@@ -69,6 +78,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   getClient: (id) => dispatch(fetchClient(id)),
+  deleteClient: (id) => dispatch(removeClient(id)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SingleClient);

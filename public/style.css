@@ -94,3 +94,8 @@ form div {
 .client-detail h2 {
   font-weight: normal;
 }
+
+.client-buttons {
+  margin-left: auto;
+  padding: 2vw;
+}

@@ -22,3 +22,14 @@ clientsRouter.get('/:id', async (req, res, next) => {
     next(err);
   }
 });
+
+// DELETE /api/clients/id
+clientsRouter.delete('/:id', async (req, res, next) => {
+  try {
+    const client = await Client.findByPk(req.params.id);
+    await client.destroy();
+    res.send(client);
+  } catch (err) {
+    next(err);
+  }
+});
