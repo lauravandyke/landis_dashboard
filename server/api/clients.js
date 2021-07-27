@@ -12,3 +12,13 @@ clientsRouter.get('/', async (req, res, next) => {
     next(err);
   }
 });
+
+// GET /api/clients/id
+clientsRouter.get('/:id', async (req, res, next) => {
+  try {
+    const client = await Client.findByPk(req.params.id);
+    res.json(client);
+  } catch (err) {
+    next(err);
+  }
+});

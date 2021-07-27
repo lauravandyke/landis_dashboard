@@ -4,6 +4,7 @@ import { withRouter, Route, Switch, Redirect } from 'react-router-dom';
 import { Login, Signup } from './components/AuthForm';
 import Home from './components/Home';
 import Clients from './components/Clients';
+import SingleClient from './components/SingleClient';
 import { me } from './store';
 
 /**
@@ -29,7 +30,13 @@ class Routes extends Component {
             <Route path="/" exact component={Login} />
             <Route path="/login" component={Login} />
             <Route path="/signup" component={Signup} />
-            <Route path="/clients" component={Clients} />
+            <Route exact path="/clients" component={Clients} />
+            <Route
+              path="/clients/:id"
+              render={(routeProps) => (
+                <SingleClient id={routeProps.match.params.id} />
+              )}
+            />
           </Switch>
         )}
       </div>

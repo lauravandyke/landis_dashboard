@@ -7,6 +7,7 @@ function ClientCard(props) {
   let phoneAreaCode = phone.substr(0, 3);
   let phonePrefix = phone.substr(3, 3);
   let phoneLine = phone.substr(6);
+  let phoneNumber = `(${phoneAreaCode}) ${phonePrefix}-${phoneLine}`;
   return (
     <div className="card">
       <div>
@@ -19,11 +20,9 @@ function ClientCard(props) {
             </h4>
           </Link>
           <ul className="cardList">
-            <li>Balance: ${balance}</li>
+            <li>Savings: ${balance}</li>
             <li>Credit Score: {credit}</li>
-            <li>
-              ({phoneAreaCode}) {phonePrefix}-{phoneLine}
-            </li>
+            <li>{phoneNumber}</li>
             <li>
               <a href={`mailto: ${email}`}>{email}</a>
             </li>

@@ -36,6 +36,10 @@ form div {
   padding: 2px 16px;
 }
 
+.container h4 {
+  margin: 1vh;
+}
+
 .clients-container {
   display: flex;
   flex-wrap: wrap;
@@ -46,4 +50,47 @@ form div {
   text-align: left;
   margin: 0px;
   padding: 0px;
+}
+
+.client-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.client-box img {
+  width: 20%;
+  padding: 2vw;
+}
+
+.client-box h2 {
+  margin-top: 0px;
+}
+
+.client-box li {
+  font-size: large;
+}
+
+.client-info {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 2vw;
+}
+
+.no-bottom {
+  margin-bottom: 0px;
+}
+
+.no-top {
+  margin-top: 0px;
+}
+
+.client-detail {
+  padding: 2vw;
+}
+
+.client-detail h2 {
+  font-weight: normal;
 }
