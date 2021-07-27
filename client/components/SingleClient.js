@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchClient } from '../store/client';
+import { formatPhone, formatAddress } from './helperFormatters';
 
 class SingleClient extends React.Component {
   componentDidMount() {
@@ -26,13 +27,9 @@ class SingleClient extends React.Component {
       comments,
       tags,
     } = client;
-    let phoneAreaCode = phone ? phone.substr(0, 3) : '';
-    let phonePrefix = phone ? phone.substr(3, 3) : '';
-    let phoneLine = phone ? phone.substr(6) : '';
-    let phoneNumber = `(${phoneAreaCode}) ${phonePrefix}-${phoneLine}`;
-    let addressCommaIdx = address ? address.indexOf(',') : 0;
-    let addressLineOne = address ? address.substr(0, addressCommaIdx) : '';
-    let addressLineTwo = address ? address.substr(addressCommaIdx + 1) : '';
+
+    let phoneNumber = phone ? formatPhone(phone) : '';
+    let addressLines = address ? formatAddress(address) : '';
 
     return (
       <div>
@@ -45,8 +42,8 @@ class SingleClient extends React.Component {
             <h3>{phoneNumber}</h3>
             <h3>{email}</h3>
             <div>
-              <h3 className="no-bottom">{addressLineOne}</h3>
-              <h3 className="no-top">{addressLineTwo}</h3>
+              <h3 className="no-bottom">{addressLines[0]}</h3>
+              <h3 className="no-top">{addressLines[1]}</h3>
             </div>
           </div>
         </div>

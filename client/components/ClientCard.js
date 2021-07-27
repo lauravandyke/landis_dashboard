@@ -1,13 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { formatPhone } from './helperFormatters';
 
 function ClientCard(props) {
   const { id, name_first, name_last, balance, credit, email, phone, picture } =
     props.client;
-  let phoneAreaCode = phone.substr(0, 3);
-  let phonePrefix = phone.substr(3, 3);
-  let phoneLine = phone.substr(6);
-  let phoneNumber = `(${phoneAreaCode}) ${phonePrefix}-${phoneLine}`;
+  let phoneNumber = phone ? formatPhone(phone) : '';
   return (
     <div className="card">
       <div>
