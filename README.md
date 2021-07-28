@@ -10,4 +10,4 @@ Run `npm install` to download project dependencies.
 
 Run `npm run seed` to seed the database
 
-Then run `npm run start-dev` to see the project on http://localhost:8080/
+Then run `npm run start:dev` to see the project on http://localhost:8080/
