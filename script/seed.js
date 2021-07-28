@@ -1,5 +1,4 @@
 'use strict';
-const { green, red } = require('chalk');
 const fs = require('fs');
 
 let accounts = fs
@@ -27,8 +26,8 @@ async function seed() {
     User.create({ username: 'Jackie', password: '123' }),
   ]);
 
-  console.log(green(`seeded ${clients.length} clients`));
-  console.log(green(`seeded ${users.length} users`));
+  console.log(`seeded ${clients.length} clients`);
+  console.log(`seeded ${users.length} users`);
 
   return {
     users: {
