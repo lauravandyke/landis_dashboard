@@ -4,7 +4,7 @@ Visit https://lauras-landis-dashboard.herokuapp.com/ to check out the deployed p
 
 To run the project on your local machine:
 
-Clone the repository: `git clone https://github.com/lauravandyke/landis_dashboard.git` and cd into it
+Clone the repository: `git clone https://github.com/lauravandyke/landis_dashboard.git` and cd into it.
 
 Run `npm install` to download project dependencies.
 
