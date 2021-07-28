@@ -1,5 +1,6 @@
 body {
   font-family: sans-serif;
+  background-color: #ccd8ff;
 }
 
 a {
@@ -133,4 +134,8 @@ form button {
 
 .low {
   background-color: #f5f5dc;
+}
+
+.indicatorKey {
+  text-shadow: black 2px;
 }

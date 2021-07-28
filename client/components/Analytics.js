@@ -8,7 +8,7 @@ class Clients extends React.Component {
   constructor() {
     super();
     this.state = {
-      labels: ['Low', 'Mid', 'High'],
+      labels: ['Starting out', 'On the path', 'Ready!'],
       datasets: [],
     };
   }
@@ -28,7 +28,11 @@ class Clients extends React.Component {
       }
       let chart = {
         label: 'Mortgage Readiness Scores',
-        backgroundColor: 'rgba(0,0,0,1)',
+        backgroundColor: [
+          'rgb(245,245,220)',
+          'rgb(255,245,153)',
+          'rgb(144,238,144)',
+        ],
         borderWidth: 2,
         data: [],
       };
