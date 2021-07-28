@@ -14,10 +14,6 @@ const Client = db.define('client', {
   },
   credit: {
     type: Sequelize.INTEGER,
-    validate: {
-      max: 850,
-      min: 300,
-    },
   },
   picture: {
     type: Sequelize.STRING,

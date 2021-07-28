@@ -7,6 +7,7 @@ import Clients from './components/Clients';
 import SingleClient from './components/SingleClient';
 import EditClient from './components/EditClient';
 import CreateClient from './components/CreateClient';
+import Analytics from './components/Analytics';
 import { me } from './store';
 
 /**
@@ -47,6 +48,7 @@ class Routes extends Component {
               )}
             />
             <Route path="/new" component={CreateClient} />
+            <Route path="/analytics" component={Analytics} />
           </Switch>
         )}
       </div>
