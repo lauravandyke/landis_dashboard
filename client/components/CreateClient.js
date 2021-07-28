@@ -1,10 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { fetchClient, updateClient } from '../store/client';
-import { removeClient } from '../store/clients';
+import { createNewClient } from '../store/clients';
 
-class EditClient extends React.Component {
+class CreateClient extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -24,21 +23,6 @@ class EditClient extends React.Component {
   }
   componentDidMount() {
     try {
-      this.props.getClient(this.props.id);
-      let { client } = this.props;
-      this.setState({
-        balance: client.balance || '',
-        credit: client.credit || '',
-        picture: client.picture || '',
-        name_first: client.name_first || '',
-        name_last: client.name_last || '',
-        employer: client.employer || '',
-        email: client.email || '',
-        phone: client.phone || '',
-        address: client.address || '',
-        comments: client.comments || '',
-        id: client.id || '',
-      });
     } catch (error) {
       console.log(error);
     }
@@ -50,13 +34,13 @@ class EditClient extends React.Component {
   }
   handleSubmit(event) {
     event.preventDefault();
-    this.props.editClient({ ...this.props.client, ...this.state });
+    this.props.makeClient({ ...this.state });
   }
 
   render() {
     return (
       <div className="edit-form">
-        <h2>Edit Client Record</h2>
+        <h2>New Client Record</h2>
         <form id="edit-client-form" onSubmit={this.handleSubmit}>
           <button type="submit">Save Changes</button>
           <Link to={`/clients/${this.props.id}`}>
@@ -134,14 +118,10 @@ class EditClient extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => ({
-  client: state.client,
-});
+const mapDispatchToProps = (dispatch) => {
+  return {
+    makeClient: (client) => dispatch(createNewClient(client)),
+  };
+};
 
-const mapDispatchToProps = (dispatch) => ({
-  getClient: (id) => dispatch(fetchClient(id)),
-  editClient: (id) => dispatch(updateClient(id)),
-  deleteClient: (id) => dispatch(removeClient(id)),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(EditClient);
+export default connect(null, mapDispatchToProps)(CreateClient);

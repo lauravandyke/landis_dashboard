@@ -31,10 +31,7 @@ export const fetchClient = (id) => {
 export const updateClient = (client) => {
   return async (dispatch) => {
     try {
-      const { data } = await axios.put(
-        `/api/clients/${client.id}/edit`,
-        client
-      );
+      const { data } = await axios.put(`/api/clients/${client.id}`, client);
       dispatch(editClient(data));
       history.push(`/clients/${client.id}`);
     } catch (error) {

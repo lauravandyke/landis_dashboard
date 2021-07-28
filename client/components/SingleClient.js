@@ -27,7 +27,7 @@ class SingleClient extends React.Component {
       phone,
       address,
       comments,
-      tags,
+      id,
     } = client;
 
     let phoneNumber = phone ? formatPhone(phone) : '';
@@ -38,9 +38,10 @@ class SingleClient extends React.Component {
         <div className="client-box">
           <img src={picture} />
           <div className="client-info">
-            <h2>
+            <h2 className="no-bottom">
               {name_first} {name_last}
             </h2>
+            <h3 className="id no-top">{id}</h3>
             <h3>{phoneNumber}</h3>
             <h3>{email}</h3>
             <div>

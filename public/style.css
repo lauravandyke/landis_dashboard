@@ -112,3 +112,46 @@ button {
 form button {
   margin: 1px;
 }
+
+.id {
+  font-weight: normal;
+}
+
+/*STOP */
+
+/* header {
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1%;
+  border: double #cccccc;
+} */
+
+/* .nav-wrapper {
+  align-items: flex-end;
+} */
+
+/* nav a {
+  display: inline-block;
+  margin: 1em;
+  color: deepskyblue;
+  font-size: 1.5em;
+} */
+
+/* .flex-row {
+  display: flex;
+} */
+
+/* .flex-column {
+  display: flex;
+  flex-direction: column;
+} */
+
+/* .header img {
+  float: left;
+  background: #555;
+  width: 30%;
+} */
+
+.logo {
+  width: 25%;
+}

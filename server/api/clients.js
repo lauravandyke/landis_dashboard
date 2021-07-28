@@ -23,8 +23,8 @@ clientsRouter.get('/:id', async (req, res, next) => {
   }
 });
 
-// PUT /api/clients/id/edit
-clientsRouter.put('/:id/edit', async (req, res, next) => {
+// PUT /api/clients/id
+clientsRouter.put('/:id', async (req, res, next) => {
   try {
     const client = await Client.findByPk(req.params.id);
     res.send(await client.update(req.body));
@@ -39,6 +39,15 @@ clientsRouter.delete('/:id', async (req, res, next) => {
     const client = await Client.findByPk(req.params.id);
     await client.destroy();
     res.send(client);
+  } catch (err) {
+    next(err);
+  }
+});
+
+// POST /api/clients/id
+clientsRouter.post('/', async (req, res, next) => {
+  try {
+    res.status(201).send(await Client.create(req.body));
   } catch (err) {
     next(err);
   }

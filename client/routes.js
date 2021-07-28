@@ -6,6 +6,7 @@ import Home from './components/Home';
 import Clients from './components/Clients';
 import SingleClient from './components/SingleClient';
 import EditClient from './components/EditClient';
+import CreateClient from './components/CreateClient';
 import { me } from './store';
 
 /**
@@ -45,6 +46,7 @@ class Routes extends Component {
                 <EditClient id={routeProps.match.params.id} />
               )}
             />
+            <Route path="/new" component={CreateClient} />
           </Switch>
         )}
       </div>

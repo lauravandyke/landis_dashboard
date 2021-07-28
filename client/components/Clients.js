@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import ClientCard from './ClientCard';
 import { fetchClients } from '../store/clients';
 
@@ -15,11 +16,16 @@ class Clients extends React.Component {
   render() {
     const { clients } = this.props;
     return (
-      <div className="clients-container">
-        {clients.map((client) => (
-          <ClientCard key={client.id} client={client} />
-        ))}
-      </div>
+      <>
+        <Link to="/new">
+          <button>Create New Client Record</button>
+        </Link>
+        <div className="clients-container">
+          {clients.map((client) => (
+            <ClientCard key={client.id} client={client} />
+          ))}
+        </div>
+      </>
     );
   }
 }
