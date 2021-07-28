@@ -1,7 +1,6 @@
 import React from 'react';
 import { Bar } from 'react-chartjs-2';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 import { fetchClients } from '../store/clients';
 
 class Clients extends React.Component {
