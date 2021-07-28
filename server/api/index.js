@@ -1,7 +1,6 @@
 const router = require('express').Router();
 module.exports = router;
 
-router.use('/users', require('./users'));
 router.use('/clients', require('./clients'));
 
 router.use((req, res, next) => {
