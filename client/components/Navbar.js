@@ -13,23 +13,10 @@ const Navbar = ({ handleClick, isLoggedIn }) => (
     </Link>
     <div className="flex-column nav-wrapper">
       <nav>
-        {isLoggedIn ? (
-          <div>
-            {/* The navbar will show these links after you log in */}
-            <Link to="/home">Home</Link>
-            <a href="#" onClick={handleClick}>
-              Logout
-            </a>
-          </div>
-        ) : (
-          <div>
-            {/* The navbar will show these links before you log in */}
-            <Link to="/login">Login</Link>
-            <Link to="/signup">Sign Up</Link>
-            <Link to="/clients">Clients</Link>
-            <Link to="/analytics">Analytics</Link>
-          </div>
-        )}
+        <div>
+          <Link to="/clients">Clients</Link>
+          <Link to="/analytics">Analytics</Link>
+        </div>
       </nav>
     </div>
     <hr />
