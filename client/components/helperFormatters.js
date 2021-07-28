@@ -12,3 +12,10 @@ export const formatAddress = (addressStr) => {
   let lineTwo = addressStr.slice(commaIdx + 1);
   return [lineOne, lineTwo];
 };
+
+export const formatReadiness = (readinessScore) => {
+  if (readinessScore === 0) return 'low';
+  if (readinessScore < 30) return 'low';
+  if (readinessScore < 45) return 'mid';
+  return 'high';
+};

@@ -1,13 +1,25 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { formatPhone } from './helperFormatters';
+import { formatPhone, formatReadiness } from './helperFormatters';
 
 function ClientCard(props) {
-  const { id, name_first, name_last, balance, credit, email, phone, picture } =
-    props.client;
+  const {
+    id,
+    name_first,
+    name_last,
+    balance,
+    credit,
+    email,
+    phone,
+    picture,
+    readiness,
+  } = props.client;
   let phoneNumber = phone ? formatPhone(phone) : '';
+  let readinessColor = readiness ? formatReadiness(readiness) : '';
+  let cardClass = 'card' + ' ' + readinessColor;
+
   return (
-    <div className="card">
+    <div className={cardClass}>
       <div>
         <div className="container">
           <Link to={`/clients/${id}`}>
