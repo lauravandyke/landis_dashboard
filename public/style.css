@@ -99,3 +99,16 @@ form div {
   margin-left: auto;
   padding: 2vw;
 }
+
+button {
+  margin: 2vw;
+  padding: 10px;
+}
+
+.edit-form {
+  padding: 2vw;
+}
+
+form button {
+  margin: 1px;
+}

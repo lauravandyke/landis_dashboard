@@ -5,6 +5,7 @@ import { Login, Signup } from './components/AuthForm';
 import Home from './components/Home';
 import Clients from './components/Clients';
 import SingleClient from './components/SingleClient';
+import EditClient from './components/EditClient';
 import { me } from './store';
 
 /**
@@ -32,9 +33,16 @@ class Routes extends Component {
             <Route path="/signup" component={Signup} />
             <Route exact path="/clients" component={Clients} />
             <Route
+              exact
               path="/clients/:id"
               render={(routeProps) => (
                 <SingleClient id={routeProps.match.params.id} />
+              )}
+            />
+            <Route
+              path="/clients/:id/edit"
+              render={(routeProps) => (
+                <EditClient id={routeProps.match.params.id} />
               )}
             />
           </Switch>

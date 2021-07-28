@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchClient } from '../store/client';
+import { Link } from 'react-router-dom';
+import { fetchClient, updateClient } from '../store/client';
 import { removeClient } from '../store/clients';
 import { formatPhone, formatAddress } from './helperFormatters';
 
@@ -48,6 +49,9 @@ class SingleClient extends React.Component {
             </div>
           </div>
           <div className="client-buttons">
+            <Link to={`/clients/${client.id}/edit`}>
+              <button type="button">Edit Record</button>
+            </Link>
             <button
               type="button"
               onClick={() => this.props.deleteClient(client.id)}
@@ -78,6 +82,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   getClient: (id) => dispatch(fetchClient(id)),
+  editClient: (id) => dispatch(updateClient(id)),
   deleteClient: (id) => dispatch(removeClient(id)),
 });
 

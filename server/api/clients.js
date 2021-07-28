@@ -23,6 +23,16 @@ clientsRouter.get('/:id', async (req, res, next) => {
   }
 });
 
+// PUT /api/clients/id/edit
+clientsRouter.put('/:id/edit', async (req, res, next) => {
+  try {
+    const client = await Client.findByPk(req.params.id);
+    res.send(await client.update(req.body));
+  } catch (err) {
+    next(err);
+  }
+});
+
 // DELETE /api/clients/id
 clientsRouter.delete('/:id', async (req, res, next) => {
   try {
