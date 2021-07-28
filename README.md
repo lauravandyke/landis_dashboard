@@ -1,5 +1,7 @@
 # Laura's Landis Dashboard
 
+Visit https://lauras-landis-dashboard.herokuapp.com/ to check out the deployed project.
+
 To run the project on your local machine:
 
 Clone this repository `git clone https://github.com/lauravandyke/landis_dashboard.git`
