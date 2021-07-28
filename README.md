@@ -1,7 +1,5 @@
 # Laura's Landis Dashboard
 
-# Getting Started
-
 To run the project on your local machine:
 
 Clone this repository `git clone https://github.com/lauravandyke/landis_dashboard.git`
